@@ -102,7 +102,7 @@ process.on('SIGINT', () => {
         }    
     })
 })
-// begin editable section
+
 import  './lib/rpsls.js';
 import rpsls from './lib/rpsls.js';
 
@@ -133,4 +133,3 @@ app.get('*', (req,res) => {
 	res.status(404).send('404 NOT FOUND')
 });
 
-// end editable section
