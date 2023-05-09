@@ -1,12 +1,66 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>Rock</title>
-        <!-- Link to your script file(s) and CSS in here somewhere -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="./scripts.js"></script>
+        <link href="./styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     </head>
     <body>
-
-    <!-- Your interface markup goes here -->
-    <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-
-    </body>
-</html>
+		<section class="section">
+            <div class="container">
+                <form id="userinput" class="" action="javascript:void(0);">
+                    <div class="field">
+                        <input class="is-checkradio is-primary" type="radio" id="rps" name="game" value="rps" onclick="showHideShots()">
+                        <label for="rps">Play Rock, Paper, Scissors?</label>
+                    </div>
+                    <div class="field">
+                        <input class="is-checkradio is-primary" type="radio" id="rpsls" name="game" value="rpsls" onclick="showHideShots()">
+                        <label for="rpsls"> Play Rock, Paper, Scissors, Lizard, Spock?</label>
+                    </div>
+                    <div class="field">
+                        <input class="is-checkradio is-primary" type="checkbox" id="opponent" name="playtype" value="opponent" onclick="showHideShots()">
+                        <label for="opponent"> Play against an opponent?</label>
+                    </div>
+                    <div class="field is-grouped is-grouped-multiline" id="shotsContainer" style="display:none">
+                        <div class="control rps shots">
+                            <input class="is-checkradio is-primary" type="radio" id="rock" name="shot" value="rock">
+                            <label for="rock">Rock</label>
+                        </div>
+                        <div class="control rps shots">
+                            <input class="is-checkradio is-primary" type="radio" id="paper" name="shot" value="paper">
+                            <label for="paper">Paper</label>
+                        </div>
+                        <div class="control rps shots">
+                            <input class="is-checkradio is-primary" type="radio" id="scissors" name="shot" value="scissors">
+                            <label for="scissors">Scissors</label>
+                        </div>
+                        <div class="control rpsls shots">
+                            <input class="is-checkradio is-primary" type="radio" id="lizard" name="shot" value="lizard">
+                            <label for="lizard">Lizard</label>
+                        </div>
+                        <div class="control rpsls shots">
+                            <input class="is-checkradio is-primary" type="radio" id="spock" name="shot" value="spock">
+                            <label for="spock">Spock</label>
+                        </div>
+                    </div>
+                    <noscript>
+                        <button type="submit" value="Change" class="button is-primary">Play</button>
+                    </noscript>
+				</form>
+				<br><br>
+				<div class="results" id="results" style="display:none">
+				</div>
+				<div class="buttons">
+					<button type="button" id="play" onclick="playGame();hideGame();" class="button is-primary"> Play</button>
+					<button type="button" id="startover" onclick="startOver()" class="button is-primary">Start Over</button>
+				</div>
+				<div class="buttons">
+					<a href="https://www.wikihow.com/Play-Rock,-Paper,-Scissors" class="button is-link" target="_blank">Rock, paper, scissors rules</a>
+					<a href="https://www.instructables.com/How-to-Play-Rock-Paper-Scissors-Lizard-Spock/" class="button is-link" target="_blank">Rock, paper, scissors, lizard, Spock rules</a>
+				</div>
+			</div>
+		</section>
+	</body>
+	</html>
